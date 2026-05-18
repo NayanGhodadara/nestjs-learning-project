@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/app_icon.png" type="image/x-icon">
+    <title>Socket Changelogs</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 40px 40px rgba(255, 0, 0, 0.4);
+        }
+
+        .version-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .module {
+            margin-top: 15px;
+        }
+
+        .endpoint {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            gap: 6px;
+            transition: 0.2s;
+        }
+
+        .endpoint:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(6px);
+        }
+
+        .method {
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .EMIT {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+        }
+
+        .LISTEN {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+        }
+
+        .endpoint-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .endpoint-title strong {
+            font-size: 15px;
+        }
+
+        .desc {
+            color: #cbd5f5;
+            font-size: 14px;
+            margin-left: 28px;
+            line-height: 1.5;
+        }
+
+        ul {
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            color: #cbd5f5;
+        }
+
+        .json-block {
+            background: #eef2f7;
+            padding: 18px;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-size: 10px;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+
+        .json-block code {
+            font-family: Consolas, Monaco, monospace;
+            white-space: pre;
+            color: #4b5563;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔌 Socket Changelogs</h1>
+
+        <!-- VERSION 1 -->
+        <div class="card">
+            <div class="version-title">Version 1.0.0 - Socket Initial Release</div>
+
+
+            <div class="module">
+                <h3>🔗 Connection Events</h3>
+
+                <div class="endpoint">
+                    <div class="endpoint-title">
+                        <span class="method EMIT">EMIT</span>
+                        <strong>send-message</strong>
+                    </div>
+
+                    <p><b>Request:</b></p>
+
+                    <pre class="json-block"><code>{
+                      "receiverUid": "U1212Asd12323",
+                      "message": "Test"
+                    }</code></pre>
+
+                    <p class="desc">
+                        Client send emit in <b>send-message</b> with specified payload and sender and receiver both get
+                        listen in <b>receive-message</b>.
+                    </p>
+
+                    <div class="endpoint-title">
+                        <span class="method LISTEN">LISTEN</span>
+                        <strong>receive-message</strong>
+                    </div>
+
+                    <p><b>Response:</b></p>
+
+                    <pre class="json-block"><code>{
+                                        "receiver": {
+                                            uid : "U1212Asd12323"
+                                        },
+                                        "sender": {
+                                            uid : "U1212Asd12323"
+                                        },
+                                        "message": "Test"
+                                    }</code></pre>
+
+                    <p class="desc">
+                        Receiver user get above response when sender send message.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VERSION 2 -->
+    <div class="card">
+        <div class="version-title">Version 1.1.0 - Improvements</div>
+        <ul>
+            <li>Improved connection stability and reconnection handling</li>
+            <li>Optimized user online/offline presence tracking</li>
+            <li>Prevented duplicate socket connections</li>
+            <li>Enhanced disconnect cleanup logic</li>
+        </ul>
+    </div>
+
+    </div>
+
+</body>
+
+</html>

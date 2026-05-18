@@ -1,0 +1,9 @@
+{
+    "EMAIL_REQUIRED": "Email is required",
+    "TOKEN_REQUIRED": "Token is required",
+    "PASSWORD_REQUIRED": "Password is required",
+    "PASSWORD_INVALID": "password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one number, and one special character",
+    "USER_NOT_FOUND": "Invalid email or user not found",
+    "INVALID_PASSWORD": "Invalid password",
+    "LOGIN_SUCCESS": "Login successfully"
+}

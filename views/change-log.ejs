@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/app_icon.png" type="image/x-icon">
+    <title>API Changelogs</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        /* Title */
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        /* Glass Card */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        /* 3D Hover Effect */
+        .card:hover {
+            transform: translateY(-10px) scale(1.01);
+            box-shadow: 0 20px 40px rgba(255, 18, 18, 0.4);
+        }
+
+        /* Version */
+        .version-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        /* Module */
+        .module {
+            margin-top: 15px;
+        }
+
+        /* Endpoint */
+        .endpoint {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+            transition: 0.2s;
+        }
+
+        /* Hover effect */
+        .endpoint:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(6px);
+        }
+
+        /* Method badges */
+        .method {
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .GET {
+            background: #3b82f6;
+        }
+
+        .POST {
+            background: #22c55e;
+        }
+
+        .PUT {
+            background: #f59e0b;
+        }
+
+        .DELETE {
+            background: #ef4444;
+        }
+
+        .PATCH {
+            background: #a855f7;
+        }
+
+        /* Description */
+        .desc {
+            color: #cbd5f5;
+            font-size: 14px;
+        }
+
+        /* List */
+        ul {
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 8px 0;
+            color: #cbd5f5;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🚀 API Changelogs</h1>
+
+        <!-- VERSION 1 -->
+        <div class="card">
+            <div class="version-title">Version 1.0.0 - Initial Release</div>
+
+            <div class="module">
+                <h3>🔐 Auth</h3>
+                <div class="endpoint"><span class="method POST">POST</span>/auth/login <span class="desc">Login
+                        user</span></div>
+                <div class="endpoint"><span class="method POST">POST</span>/auth/register <span class="desc">Register
+                        user</span></div>
+                <div class="endpoint"><span class="method POST">POST</span>/auth/social-login <span class="desc">Social
+                        login</span></div>
+            </div>
+
+            <div class="module">
+                <h3>👤 User</h3>
+                <div class="endpoint"><span class="method GET">GET</span>/user <span class="desc">Get user info</span>
+                </div>
+                <div class="endpoint"><span class="method PUT">PUT</span>/user <span class="desc">Update user</span>
+                </div>
+            </div>
+
+            <div class="module">
+                <h3>📍 Address</h3>
+                <div class="endpoint"><span class="method POST">POST</span>/address <span class="desc">Create
+                        address</span></div>
+                <div class="endpoint"><span class="method GET">GET</span>/address <span class="desc">Get all
+                        addresses</span></div>
+                <div class="endpoint"><span class="method DELETE">DELETE</span>/address/{id} <span class="desc">Delete
+                        address</span></div>
+                <div class="endpoint"><span class="method PUT">PUT</span>/address/{id} <span class="desc">Update
+                        address</span></div>
+            </div>
+
+            <div class="module">
+                <h3>📦 Order</h3>
+                <div class="endpoint"><span class="method POST">POST</span>/order/place-order/{pid} <span
+                        class="desc">Place order</span></div>
+                <div class="endpoint"><span class="method GET">GET</span>/order/customer <span class="desc">Customer
+                        orders</span></div>
+                <div class="endpoint"><span class="method GET">GET</span>/order/vendor <span class="desc">Vendor
+                        orders</span></div>
+                <div class="endpoint"><span class="method PATCH">PATCH</span>/order/update-status/{id} <span
+                        class="desc">Update order status</span></div>
+            </div>
+
+        </div>
+
+        <!-- VERSION 2 -->
+        <div class="card">
+            <div class="version-title">Version 1.1.0 - Improvements</div>
+            <ul>
+                <li>Added Admin Seeder</li>
+                <li>Improved authentication</li>
+                <li>Optimized order APIs</li>
+                <li>Enhanced validation</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
