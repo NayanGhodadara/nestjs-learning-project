@@ -1,5 +1,6 @@
+import { AuthService } from './../auth/auth.service';
 import { UpdateUserDto, UserDto } from 'src/api/user/user.dto';
-import { Injectable } from "@nestjs/common";
+import { forwardRef, Inject, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { UserEntity } from "./user.entity";
 import { Not, Repository } from "typeorm";
@@ -12,6 +13,8 @@ export class UserService {
     constructor(
         @InjectRepository(UserEntity)
         private userRepo: Repository<UserEntity>,
+        @Inject(forwardRef(() => AuthService))
+        private readonly authService: AuthService,
         private readonly documentService: DocumentService
     ) { }
 

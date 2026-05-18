@@ -1,6 +1,6 @@
 import { SocialLoginDto } from './social.dto';
 import { ProviderType } from 'src/constants/app.constants';
-import { BadRequestException, HttpCode, HttpStatus, Injectable, UnauthorizedException } from '@nestjs/common';
+import { BadRequestException, forwardRef, HttpCode, HttpStatus, Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { UserDto } from 'src/api/user/user.dto';
 import { UserEntity } from 'src/api/user/user.entity';
@@ -27,6 +27,7 @@ export class AuthService {
         @InjectRepository(UserEntity)
         private authRepo: Repository<UserEntity>,
         private readonly tokenService: TokenService,
+        @Inject(forwardRef(() => UserService))
         private readonly userService: UserService,
         private readonly documentService: DocumentService,
     ) { }
