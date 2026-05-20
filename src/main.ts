@@ -7,17 +7,12 @@ import { join } from 'path';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule) as any;
 
-  const serverUrl =
-    process.env.NODE_ENV === 'production'
-      ? 'https://test-levh.onrender.com/api/v1'
-      : 'http://localhost:1000/api/v1';
-
   const config = new DocumentBuilder()
     .setTitle('D2D API')
     .setDescription('API documentation for the D2D application')
     .setVersion('1.0')
     .addBearerAuth()
-    .addServer(serverUrl, 'D2d server')
+    .addServer(process.env.BASE_URL || "", 'D2d server')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
