@@ -33,6 +33,7 @@ export class AuthService {
     ) { }
 
     async loginUser(userDto: UserDto, i18n: I18nContext) {
+        console.log("userDto:::", userDto);
 
         const result = await this.authRepo.findOne({
             where: {
