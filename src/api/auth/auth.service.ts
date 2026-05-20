@@ -33,8 +33,6 @@ export class AuthService {
     ) { }
 
     async loginUser(userDto: UserDto, i18n: I18nContext) {
-        console.log("userDto:::", userDto);
-
         const result = await this.authRepo.findOne({
             where: {
                 email: userDto.email
@@ -45,6 +43,7 @@ export class AuthService {
             throw new BadRequestException(i18n.t('common.USER_NOT_FOUND'));
         }
 
+        console.log("bothpassword:::", userDto.password, "|", result.password);
         const isMatch = await bycrypt.compareSync(userDto.password, result.password);
         if (!isMatch) {
             throw new BadRequestException(i18n.t('common.INVALID_PASSWORD'));
