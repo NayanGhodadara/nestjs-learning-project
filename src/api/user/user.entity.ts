@@ -17,7 +17,7 @@ export class UserEntity {
     @Column({ unique: true, type: 'varchar', length: 200, nullable: true })
     email: string | null = null;
 
-    @Column({ type: 'varchar', length: 200, nullable: true, default: null, select: false })
+    @Column({ type: 'varchar', length: 200, nullable: true, default: null, select: true })
     password: string | null = null;
 
     @Column({ type: 'varchar', length: 200, nullable: true, default: null })
