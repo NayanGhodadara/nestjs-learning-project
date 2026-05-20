@@ -12,7 +12,7 @@ async function bootstrap() {
     .setDescription('API documentation for the D2D application')
     .setVersion('1.0')
     .addBearerAuth()
-    .addServer('http://test-levh.onrender.com/api/v1/', 'Development server')
+    .addServer('https://test-levh.onrender.com/api/v1/', 'Prod server')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
