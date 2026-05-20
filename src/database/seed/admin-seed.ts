@@ -41,7 +41,7 @@ export default class CreateAdminSeeder implements Seeder {
                 await repo.save(newAdmin);
                 console.log(`Admin user with email ${user.email} created successfully.`);
             } else {
-                console.log('Admin user with email ${user.email} already exists. Skipping creation.');
+                console.log(`Admin user with email ${user.email} already exists. Skipping creation.`);
             }
         }
     }

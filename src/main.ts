@@ -3,7 +3,6 @@ import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from 'node_modules/@nestjs/swagger/dist';
 import { BadRequestException, ValidationPipe } from 'node_modules/@nestjs/common';
 import { join } from 'path';
-import { UppercaseInterceptor } from './intercepter/uppercase.intercepter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule) as any;

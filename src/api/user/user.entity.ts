@@ -1,4 +1,3 @@
-import { ProviderType } from './../../constants/app.constants';
 import { GenderType, UserType } from "src/constants/app.constants";
 import { Column, Entity, OneToMany, PrimaryColumn } from "typeorm";
 import { AddressEntity } from "../address/address.entity";
@@ -18,7 +17,7 @@ export class UserEntity {
     @Column({ unique: true, type: 'varchar', length: 200, nullable: true })
     email: string | null = null;
 
-    @Column({ type: 'varchar', length: 200, nullable: true, default: null })
+    @Column({ type: 'varchar', length: 200, nullable: true, default: null, select: false })
     password: string | null = null;
 
     @Column({ type: 'varchar', length: 200, nullable: true, default: null })
