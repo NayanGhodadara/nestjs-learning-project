@@ -26,6 +26,10 @@ import { ChatModule } from './api/chat/chat.module';
     ConfigModule.forRoot({
       isGlobal: true,
       expandVariables: true,
+      envFilePath:
+        process.env.NODE_ENV === 'production'
+          ? '.env.production'
+          : '.env.development',
       cache: true,
     }),
     TypeOrmModule.forRoot(databaseSourceOption),
